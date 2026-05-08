@@ -78,13 +78,13 @@ const products = [
   {
     img: "/jhumka51.jpeg",
     name: "Jhumka",
-    price: 550,
+    price: 799,
     category: "Jhumkas",
   },
   {
     img: "/jhumka52.jpeg",
     name: "Jhumka",
-    price: 550,
+    price: 399,
     category: "Jhumkas",
   },
   {
@@ -96,14 +96,14 @@ const products = [
   {
     img: "/jhumka41.jpeg",
     name: "Jhumka",
-    price: 450,
+    price: 499,
     category: "Jhumkas",
   },
 
   {
     img: "/jhumka42.jpeg",
     name: "Jhumka",
-    price: 450,
+    price: 799,
     category: "Jhumkas",
   },
   {
@@ -127,7 +127,7 @@ const products = [
   {
     img: "/jhumka46.jpeg",
     name: "Jhumka",
-    price: 450,
+    price: 399,
     category: "Jhumkas",
   },
 
