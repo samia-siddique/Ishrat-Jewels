@@ -59,15 +59,6 @@ const Footer = () => {
         <p>
           <FontAwesomeIcon icon={faPhone} /> +92 333 3000000
         </p>
-
-        <a
-          href="https://www.instagram.com/ishrat_jewels/"
-          target="_blank"
-          rel="noreferrer"
-          className="social-link"
-        >
-          <FontAwesomeIcon icon={faInstagram} />
-        </a>
       </div>
     </div>
   );
