@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
-import Products from "./components/Product/Product";
+import Product from "./components/Product/Product";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <Hero />
       </section>
       <section id="shop">
-        <Products />
+        <Product />
       </section>
       <section id="contact">
         <Footer />
@@ -21,4 +21,3 @@ const App = () => {
 };
 
 export default App;
-
