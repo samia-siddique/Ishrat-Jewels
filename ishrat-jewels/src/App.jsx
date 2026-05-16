@@ -1,21 +1,15 @@
 import React from "react";
-import Hero from "./components/Hero/Hero";
-import Footer from "./components/Footer/Footer";
-import Product from "./components/Product/Product";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Admin from "./pages/Admin/Admin";
 
 const App = () => {
   return (
     <div>
-      {" "}
-      <section id="home">
-        <Hero />
-      </section>
-      <section id="shop">
-        <Product />
-      </section>
-      <section id="contact">
-        <Footer />
-      </section>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+      </Routes>
     </div>
   );
 };

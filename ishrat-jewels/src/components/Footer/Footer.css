@@ -57,8 +57,6 @@
   transform: translateX(6px);
 }
 
-
-
 /* SOCIAL LINK */
 .social-link {
   display: flex;
@@ -175,7 +173,6 @@
   .right-footer p {
     font-size: 13px;
   }
-
   .whatsapp-btn {
     padding: 10px 14px;
     font-size: 14px;

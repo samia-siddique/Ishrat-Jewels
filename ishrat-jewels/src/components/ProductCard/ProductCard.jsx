@@ -13,7 +13,11 @@ Price: ${price} PKR`;
 
   return (
     <div className="card">
-      <img src={img} alt={name} className="card-img" />
+      <img
+        src={`http://localhost:5000${img}`}
+        alt={name}
+        className="card-img"
+      />
 
       <div className="card-info">
         <h3>{name}</h3>
