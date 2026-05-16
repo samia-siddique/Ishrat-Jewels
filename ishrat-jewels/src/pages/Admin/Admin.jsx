@@ -31,10 +31,13 @@ const Admin = () => {
     formData.append("price", productData.price);
     formData.append("image", image);
 
-    const res = await fetch("https://your-railway-url.up.railway.app/productData", {
-      method: "POST",
-      body: formData,
-    });
+    const res = await fetch(
+      "https://YOUR-RAILWAY-URL.up.railway.app/productData",
+      {
+        method: "POST",
+        body: formData,
+      },
+    );
 
     const data = await res.json();
     console.log(data);
