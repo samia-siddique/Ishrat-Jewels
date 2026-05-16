@@ -14,7 +14,7 @@ Price: ${price} PKR`;
   return (
     <div className="card">
       <img
-        src={`http://localhost:5000${img}`}
+        src={`https://your-railway-url.up.railway.app${img}`}
         alt={name}
         className="card-img"
       />

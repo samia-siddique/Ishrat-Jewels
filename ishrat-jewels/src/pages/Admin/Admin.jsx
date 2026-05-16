@@ -31,7 +31,7 @@ const Admin = () => {
     formData.append("price", productData.price);
     formData.append("image", image);
 
-    const res = await fetch("http://localhost:5000/productData", {
+    const res = await fetch("https://your-railway-url.up.railway.app/productData", {
       method: "POST",
       body: formData,
     });
