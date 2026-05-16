@@ -11,13 +11,11 @@ Price: ${price} PKR`;
     whatsappMessage,
   )}`;
 
+  const API = "https://your-railway-url.up.railway.app";
+
   return (
     <div className="card">
-      <img
-        src={`https://your-railway-url.up.railway.app${img}`}
-        alt={name}
-        className="card-img"
-      />
+      <img src={`${API}${img}`} alt={name} className="card-img" />
 
       <div className="card-info">
         <h3>{name}</h3>

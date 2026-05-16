@@ -3,6 +3,7 @@ import "./Admin.css";
 
 const Admin = () => {
   const fileRef = useRef();
+  const API = "https://your-railway-url.up.railway.app";
 
   const [productData, setProductData] = useState({
     title: "",
@@ -34,7 +35,7 @@ const Admin = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch("YOUR-RAILWAY-URL/productData", {
+    const response = await fetch(`${API}/productData`, {
         method: "POST",
         body: formData,
       });
