@@ -26,32 +26,30 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("BUTTON CLICKED");
+
     const formData = new FormData();
     formData.append("title", productData.title);
     formData.append("price", productData.price);
     formData.append("image", image);
 
-    const res = await fetch(
-      "https://YOUR-RAILWAY-URL.up.railway.app/productData",
-      {
+    try {
+      const response = await fetch("YOUR-RAILWAY-URL/productData", {
         method: "POST",
         body: formData,
-      },
-    );
+      });
 
-    const data = await res.json();
-    console.log(data);
+      const data = await response.json();
 
-    setProductData({
-      title: "",
-      price: "",
-      image: "",
-    });
+      console.log(data);
 
-    setImage(null);
-
-    fileRef.current.value = "";
+      alert("Product Uploaded!");
+    } catch (error) {
+      console.log(error);
+    }
+    console.log("clicked");
   };
+
   return (
     <div className="admin">
       <h1>Admin Panel</h1>
