@@ -8,7 +8,7 @@ const Admin = () => {
   const [productData, setProductData] = useState({
     title: "",
     price: "",
-    image: "",
+    image: req.file ? `/uploads/${req.file.filename}` : "",
   });
   const [image, setImage] = useState(null);
 
@@ -35,7 +35,7 @@ const Admin = () => {
     formData.append("image", image);
 
     try {
-    const response = await fetch(`${API}/productData`, {
+      const response = await fetch(`${API}/productData`, {
         method: "POST",
         body: formData,
       });
