@@ -2,7 +2,9 @@ import React from "react";
 import "./ProductCard.css";
 
 const ProductCard = ({ img, name, price }) => {
-  const whatsappMessage = `I would like to order from Ishrat Jewels:
+  const API = "https://ishrat-jewels-production.up.railway.app";
+
+  const whatsappMessage = `I would like to order:
 
 Product: ${name}
 Price: ${price} PKR`;
@@ -11,18 +13,16 @@ Price: ${price} PKR`;
     whatsappMessage,
   )}`;
 
-  const API = "https://ishrat-jewels-production.up.railway.app";
-
   return (
     <div className="card">
-      <img src={`${API}${img}`} alt={name} className="card-img" />
+      <img src={`${API}${img}`} alt={name} />
 
       <div className="card-info">
         <h3>{name}</h3>
-        <p className="price">{price} PKR</p>
+        <p>{price} PKR</p>
 
         <a href={whatsappURL} target="_blank" rel="noreferrer">
-          <button className="btn">Order</button>
+          <button>Order</button>
         </a>
       </div>
     </div>

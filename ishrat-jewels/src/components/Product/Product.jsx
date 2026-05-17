@@ -4,28 +4,24 @@ import Categories from "../Categories/Categories";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory] = useState("All");
+
+  const API = "https://ishrat-jewels-production.up.railway.app";
 
   useEffect(() => {
-    fetch("https://ishrat-jewels-production.up.railway.app/products")
+    fetch(`${API}/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
-  const filteredProducts =
-    selectedCategory === "All"
-      ? products
-      : products.filter((item) => item.category === selectedCategory);
-
   return (
     <>
-      <Categories setSelectedCategory={setSelectedCategory} />
+      <Categories />
 
       <div className="all-cards">
-        {filteredProducts.map((item) => (
+        {products.map((item) => (
           <ProductCard
             key={item._id}
-            id={item._id}
             img={item.image}
             name={item.title}
             price={item.price}
