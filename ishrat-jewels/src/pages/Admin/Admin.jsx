@@ -5,6 +5,8 @@ const Admin = () => {
   const fileRef = useRef();
 
   const API = "https://ishrat-jewels-production.up.railway.app";
+  console.log("API FIXED VERSION 2");
+  const API = "https://ishrat-jewels-backend-production.up.railway.app";
 
   const [productData, setProductData] = useState({
     title: "",

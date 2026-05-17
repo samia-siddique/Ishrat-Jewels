@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static("uploads"));
 
-// create uploads folder if not exists
+// create uploads folder
 if (!fs.existsSync("uploads")) {
   fs.mkdirSync("uploads");
 }

@@ -4,6 +4,7 @@ import upload from "../middleware/upload.js";
 
 const router = express.Router();
 
+// CREATE PRODUCT
 router.post("/products", upload.single("image"), async (req, res) => {
   try {
     const { title, price } = req.body;
@@ -20,6 +21,7 @@ router.post("/products", upload.single("image"), async (req, res) => {
   }
 });
 
+// GET PRODUCTS
 router.get("/products", async (req, res) => {
   try {
     const products = await Product.find();

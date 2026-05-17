@@ -3,13 +3,15 @@ import "./Admin.css";
 
 const Admin = () => {
   const fileRef = useRef();
+
+  // ✅ ONLY ONE API (IMPORTANT)
   const API = "https://ishrat-jewels-backend-production.up.railway.app";
 
   const [productData, setProductData] = useState({
     title: "",
     price: "",
-    image: "",
   });
+
   const [image, setImage] = useState(null);
 
   const handleImage = (e) => {
@@ -18,16 +20,11 @@ const Admin = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProductData({
-      ...productData,
-      [name]: value,
-    });
+    setProductData({ ...productData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log("BUTTON CLICKED");
 
     const formData = new FormData();
     formData.append("title", productData.title);
@@ -35,8 +32,7 @@ const Admin = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch(`${API}/products
-        `, {
+      const response = await fetch(`${API}/products`, {
         method: "POST",
         body: formData,
       });
@@ -44,40 +40,38 @@ const Admin = () => {
       const data = await response.json();
 
       console.log(data);
-
       alert("Product Uploaded!");
+
+      // reset
+      setProductData({ title: "", price: "" });
+      setImage(null);
+      fileRef.current.value = null;
     } catch (error) {
       console.log(error);
     }
-    console.log("clicked");
   };
 
   return (
     <div className="admin">
       <h1>Admin Panel</h1>
 
-      <div className="right-bar">
-        <h3>Upload Product</h3>
-        <input
-          value={productData.title}
-          onChange={handleChange}
-          type="text"
-          name="title"
-          placeholder="Enter Product Name"
-        ></input>
+      <input
+        value={productData.title}
+        onChange={handleChange}
+        name="title"
+        placeholder="Product Name"
+      />
 
-        <input
-          value={productData.price}
-          onChange={handleChange}
-          name="price"
-          type="number"
-          placeholder="Enter Price"
-        ></input>
+      <input
+        value={productData.price}
+        onChange={handleChange}
+        name="price"
+        placeholder="Price"
+      />
 
-        <input type="file" name="image" onChange={handleImage} ref={fileRef} />
+      <input type="file" onChange={handleImage} ref={fileRef} />
 
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 };
