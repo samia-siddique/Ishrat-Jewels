@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import Categories from "../Categories/Categories";
 
-
-
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    fetch("https://your-railway-url.up.railway.app/products")
+    fetch("https://ishrat-jewels-backend-production.up.railway.app")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

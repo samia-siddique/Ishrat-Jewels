@@ -3,12 +3,12 @@ import "./Admin.css";
 
 const Admin = () => {
   const fileRef = useRef();
-  const API = "https://your-railway-url.up.railway.app";
+  const API = "https://ishrat-jewels-backend-production.up.railway.app";
 
   const [productData, setProductData] = useState({
     title: "",
     price: "",
-    image: req.file ? `/uploads/${req.file.filename}` : "",
+    image: "",
   });
   const [image, setImage] = useState(null);
 
