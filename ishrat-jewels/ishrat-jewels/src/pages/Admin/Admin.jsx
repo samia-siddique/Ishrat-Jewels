@@ -35,7 +35,8 @@ const Admin = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch(`${API}/productData`, {
+      const response = await fetch(`${API}/products
+        `, {
         method: "POST",
         body: formData,
       });
