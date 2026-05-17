@@ -1,13 +1,10 @@
 import express from "express";
 import productRoutes from "./routes/productRoutes.js";
 import mongoose from "mongoose";
-import path from "path";
 import fs from "fs";
 import cors from "cors";
 
-app.use(express.json());
-app.use("/uploads", express.static("uploads"));
-app.use(express.urlencoded({ extended: true }));
+const app = express(); // ✅ MUST BE FIRST
 
 app.use(
   cors({
@@ -17,6 +14,12 @@ app.use(
   }),
 );
 
+// middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static("uploads"));
+
+// extra safety CORS (optional)
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -28,9 +31,11 @@ app.use((req, res, next) => {
 
 const startServer = async () => {
   const PORT = process.env.PORT || 5000;
+
   if (!fs.existsSync("uploads")) {
     fs.mkdirSync("uploads");
   }
+
   try {
     await mongoose.connect(
       "mongodb+srv://samiasiddique34_db_user:autherSamia@cluster0.09hi1r5.mongodb.net/jewelry",
