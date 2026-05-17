@@ -3,7 +3,7 @@ import "./Admin.css";
 
 const Admin = () => {
   const fileRef = useRef();
-  const API = "https://ishrat-jewels-production.up.railway.app";
+  const API = "https://ishrat-jewels-backend-production.up.railway.app";
 
   const [productData, setProductData] = useState({
     title: "",

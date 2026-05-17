@@ -1,0 +1,78 @@
+.admin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  gap: 15px;
+}
+
+.right-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 340px;
+
+  padding: 30px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.right-bar h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.right-bar input {
+  padding: 13px 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.right-bar input:focus {
+  border-color: #c9a96e;
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.2);
+}
+
+.right-bar button {
+  padding: 12px 20px;
+  background:  #c9a96e;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.right-bar button:hover {
+  transform: translatey(-2px);
+  box-shadow: 0 10px 20px rgba(201, 169, 110, 0.3);
+}
+.right-bar button:active {
+  transform: scale(0.98);
+}
+
+.right-bar input[type="file"] {
+  padding: 10px;
+  border: 1px dashed #c9a96e;
+  background: rgba(255, 255, 255, 0.6);
+}
+.right-bar input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}

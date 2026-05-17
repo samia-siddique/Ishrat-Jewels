@@ -11,7 +11,7 @@ Price: ${price} PKR`;
     whatsappMessage,
   )}`;
 
-  const API = "https://ishrat-jewels-production.up.railway.app";
+  const API = "https://your-railway-url.up.railway.app";
 
   return (
     <div className="card">
