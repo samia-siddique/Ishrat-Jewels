@@ -35,7 +35,7 @@ const Admin = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch(`${API}/productData`, {
+      const response = await fetch(`${API}/products`, {
         method: "POST",
         body: formData,
       });
@@ -45,10 +45,14 @@ const Admin = () => {
       console.log(data);
 
       alert("Product Uploaded!");
+
+      // ✅ RESET FIELDS HERE (IMPORTANT)
+      setProductData({ title: "", price: "" });
+      setImage(null);
+      fileRef.current.value = "";
     } catch (error) {
       console.log(error);
     }
-    console.log("clicked");
   };
 
   return (

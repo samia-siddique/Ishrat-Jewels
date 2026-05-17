@@ -7,7 +7,7 @@ const Product = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    fetch("https://ishrat-jewels-backend-production.up.railway.app")
+    fetch("https://ishrat-jewels-production.up.railway.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

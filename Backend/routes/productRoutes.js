@@ -4,7 +4,7 @@ import upload from "../middleware/upload.js";
 
 const router = express.Router();
 
-router.post("/productData", upload.single("image"), async (req, res) => {
+router.post("/products", upload.single("image"), async (req, res) => {
   try {
     const { title, price } = req.body;
 
